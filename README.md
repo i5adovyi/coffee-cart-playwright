@@ -28,4 +28,4 @@ On Linux, use `npx playwright install --with-deps chromium` to install browser s
 
 ## GitHub Actions
 
-The [Coffee Cart workflow](.github/workflows/coffee-cart.yml) runs the same five tests without retries when the suite, workflow, Playwright configuration or package files change on a push. Open a run in the [Coffee Cart CI history](https://github.com/i5adovyi/TA-Dojo-One/actions?query=workflow%3A%22Coffee+Cart%22) and download `coffee-cart-report` under **Artifacts** for the HTML report.
+The [Coffee Cart workflow](.github/workflows/coffee-cart.yml) runs the same five tests without retries when the suite, workflow, Playwright configuration or package files change on a push. Open a run in the [Coffee Cart CI history](https://github.com/i5adovyi/coffee-cart-playwright/actions/workflows/coffee-cart.yml) and download `coffee-cart-report` under **Artifacts** for the HTML report.
