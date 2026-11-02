@@ -1,0 +1,33 @@
+name: Coffee Cart
+
+on:
+  push:
+    paths:
+      - 'coffee-shop-tests/**'
+      - 'playwright.config.ts'
+      - 'package*.json'
+      - '.github/workflows/coffee-cart.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Coffee Cart on Chromium
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project="Coffee Cart" --retries=0
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: coffee-cart-report
+          path: playwright-report/
+          retention-days: 14

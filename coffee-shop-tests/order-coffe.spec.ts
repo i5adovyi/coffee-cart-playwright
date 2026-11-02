@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { expect } from '@playwright/test';
 import { test } from '../coffee-shop-tests/src/fixtures/main-fixture';
 import { coffeeMenuList } from '../coffee-shop-tests/src/pages/menu/coffee-menu-list';
-import { clickFewTimes } from '/Users/admin/TA Dojo One/coffee-shop-tests/src/helpers/helpers.ts';
+import { clickFewTimes } from './src/helpers/helpers';
 
 const userName = faker.internet.userName();
 const userEmail = faker.internet.email();
